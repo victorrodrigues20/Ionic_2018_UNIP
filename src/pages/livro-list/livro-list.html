@@ -1,23 +1,43 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary" *ngIf="!visibilidade">
         <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
+          <ion-icon name="menu"></ion-icon>
         </button>
         <ion-title>Listagem Livros</ion-title>
+  
+        <ion-buttons end>
+          <button ion-button icon-only (click)="abrirPesquisa($event)">
+            <ion-icon name="search"></ion-icon>
+          </button>
+          <button ion-button icon-only (click)="novoItem($event)">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-buttons>
     </ion-navbar>
-</ion-header>
+  
+    <ion-navbar color="primary" *ngIf="visibilidade">
+      <ion-searchbar [(ngModel)]="pesquisa"
+                     [showCancelButton]="shouldShowCancel"
+                     (ionInput)="pesquisar($event)"
+                     (ionClear)="cancelarPesquisa()">
+      </ion-searchbar>
+    </ion-navbar>
+  </ion-header>  
+
 <ion-content>
+
     <ion-list>
-        <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-            <ion-icon [name]="item.ano" item-left></ion-icon>
-            {{item.titulo}}
-            <div class="item-note" item-right>
-                Disponível
-            </div>
+      <ion-item>
+        <button ion-item *ngFor="let item of itemsFilter" (click)="itemTapped($event, item)">
+          <ion-thumbnail item-start>
+            <img src="{{item.img}}">
+          </ion-thumbnail>
+          <h2>{{item.titulo}}</h2>
+          <p>{{item.ano}}</p>
+          <button ion-button clear item-end>Ver</button>
         </button>
+      </ion-item>
     </ion-list>
-    <div *ngIf="selectedItem" padding>
-        You navigated here from
-        <b>{{selectedItem.title}}</b>
-    </div>
-</ion-content>
+  
+  </ion-content>
+  
