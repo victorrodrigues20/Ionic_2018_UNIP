@@ -3,6 +3,10 @@ import { NavController, NavParams } from 'ionic-angular';
 import { LivroProvider } from "../../providers/livro";
 import { ILivro } from "../../interfaces/ILivro";
 
+import {LivroAddPage} from "../livro-add/livro-add";
+import {LivroDetailsPage} from "../livro-details/livro-details";
+
+
 @Component({
     selector: 'page-livro-list',
     templateUrl: 'livro-list.html'
@@ -27,16 +31,22 @@ export class LivroListPage {
         this.visibilidade = false;
     }
 
+    ionViewWillEnter() {
+        this.items = this.livroProvider.getLivros();
+        this.itemsFilter = this.items;
+    }
+      
     itemTapped(event, item) {
         // That's right, we're pushing to ourselves!
-        this.navCtrl.push(LivroListPage, {
-            item: item
+        this.navCtrl.push(LivroDetailsPage, {
+            item : item
         });
     }
-
+      
     novoItem(event, item) {
-        
+        this.navCtrl.push(LivroAddPage, { });
     }
+      
 
     abrirPesquisa(event) {
         this.visibilidade = true;

@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LivroListPage } from '../pages/livro-list/livro-list';
+import { LivroAddPage } from "../pages/livro-add/livro-add";
+import { LivroDetailsPage } from "../pages/livro-details/livro-details";
 
 import { LivroProvider } from "../providers/livro";
 
@@ -18,6 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LivroListPage,
+    LivroAddPage,
+    LivroDetailsPage  
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LivroListPage,
+    LivroAddPage,
+    LivroDetailsPage  
   ],
   providers: [
     StatusBar,
