@@ -1,0 +1,32 @@
+<ion-header>
+
+
+
+  <ion-navbar>
+
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        
+    <ion-title>animacoes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button (click)="criarEfeito()">Efeito</button>
+
+  <p [@meuEfeito]="estadoAnimacao">
+    Texto Animacao 01
+  </p>
+
+  <br /><br />
+
+  <div animates #animation="animates" text-center>
+    <button ion-button (click)="animation.start({type: 'shake', duration: '1000'})">Clique aqui</button>
+  </div>
+  
+  
+
+</ion-content>
