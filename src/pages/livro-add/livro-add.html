@@ -24,6 +24,13 @@
       <ion-input type="number" [(ngModel)]="livro.ano"></ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label>Autores</ion-label>
+      <button ion-button item-right color="positive" (click)="gerenciarAutores()">
+      <ion-icon name="add"></ion-icon>&nbsp;Gerenciar
+      </button>
+    </ion-item>
+
   </ion-list>
 
   <ion-buttons>

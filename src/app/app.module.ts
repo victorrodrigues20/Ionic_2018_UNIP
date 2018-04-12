@@ -11,6 +11,8 @@ import { LivroDetailsPage } from "../pages/livro-details/livro-details";
 import { AnimacoesPage } from '../pages/animacoes/animacoes';
 
 import { LivroProvider } from "../providers/livro";
+import { AutorProvider } from '../providers/autor';
+import { LivroAutorProvider } from '../providers/livro-autor';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -49,7 +51,9 @@ import {AnimatesDirective, AnimationService} from "css-animator";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LivroProvider,
-    AnimationService
+    AnimationService,
+    AutorProvider,
+    LivroAutorProvider
   ]
 })
 export class AppModule {}
