@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpModule } from "@angular/http";
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -13,12 +14,14 @@ import { AnimacoesPage } from '../pages/animacoes/animacoes';
 import { LivroProvider } from "../providers/livro";
 import { AutorProvider } from '../providers/autor';
 import { LivroAutorProvider } from '../providers/livro-autor';
+import { CategoriaProvider } from '../providers/categoria';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AnimatesDirective, AnimationService} from "css-animator";
+
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import {AnimatesDirective, AnimationService} from "css-animator";
     BrowserModule,
     BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,7 +57,8 @@ import {AnimatesDirective, AnimationService} from "css-animator";
     LivroProvider,
     AnimationService,
     AutorProvider,
-    LivroAutorProvider
+    LivroAutorProvider,
+    CategoriaProvider
   ]
 })
 export class AppModule {}

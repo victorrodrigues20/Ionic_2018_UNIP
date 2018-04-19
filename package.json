@@ -29,6 +29,7 @@
     "css-animator": "^2.3.0",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "restify": "^7.1.1",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
     "web-animations-js": "^2.3.1",
